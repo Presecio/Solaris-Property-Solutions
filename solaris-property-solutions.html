@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solaris Property Solutions | Licensed Builders Perth & WA</title>
+<meta name="description" content="Perth's trusted licensed builders. Building maintenance, renovations, repairs & project management across Western Australia. HIA & Master Builders members.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --sun: #D4933A;
+    --sun-light: #E8B86D;
+    --sun-pale: #F5E6CC;
+    --charcoal: #1A1A1A;
+    --slate: #2C2C2C;
+    --mid: #4A4A4A;
+    --muted: #8A8A8A;
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --border: rgba(212,147,58,0.2);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--charcoal);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(26,26,26,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: padding 0.3s;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-logo-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--sun);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-logo-icon svg { width: 22px; height: 22px; }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cream);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  .nav-brand span { display: block; font-size: 0.7rem; font-family: 'Outfit', sans-serif; font-weight: 300; color: var(--sun); letter-spacing: 0.12em; text-transform: uppercase; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--sun); }
+
+  .nav-cta {
+    background: var(--sun);
+    color: var(--charcoal) !important;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    color: var(--charcoal);
+    transition: background 0.2s, transform 0.1s !important;
+  }
+
+  .nav-cta:hover { background: var(--sun-light) !important; color: var(--charcoal) !important; transform: translateY(-1px); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: 0.3s; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(212,147,58,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(212,147,58,0.05) 0%, transparent 50%);
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212,147,58,0.12);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--sun);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    width: fit-content;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sun);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.2rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--cream);
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sun);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--sun);
+    color: var(--charcoal);
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(212,147,58,0.3);
+  }
+
+  .btn-primary:hover {
+    background: var(--sun-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(212,147,58,0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cream);
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--sun); border-color: var(--sun); }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px;
+    z-index: 2;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  .hero-card-stack {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .hero-card {
+    background: var(--slate);
+    border: 1px solid rgba(212,147,58,0.15);
+    border-radius: 16px;
+    padding: 36px;
+    position: relative;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(212,147,58,0.3), transparent 60%);
+    z-index: -1;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 20px 16px;
+    background: rgba(212,147,58,0.06);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--sun);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+  }
+
+  .trust-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .trust-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .trust-badge {
+    background: rgba(212,147,58,0.1);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    color: var(--sun-light);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* SERVICES */
+  .services {
+    background: var(--cream);
+    color: var(--charcoal);
+    padding: 120px 80px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--mid);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(26,26,26,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 48px 36px;
+    transition: background 0.25s;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--sun);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-card:hover { background: #FFFBF5; }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--sun-pale);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: background 0.25s;
+  }
+
+  .service-card:hover .service-icon { background: rgba(212,147,58,0.2); }
+  .service-icon svg { width: 26px; height: 26px; color: var(--sun); }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* WHY CHOOSE */
+  .why {
+    background: var(--charcoal);
+    padding: 120px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212,147,58,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .why-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .why-left .section-title { color: var(--cream); text-align: left; }
+  .why-left .section-tag { text-align: left; display: block; }
+  .why-left .section-sub { text-align: left; color: var(--muted); margin: 0 0 48px; }
+
+  .why-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .why-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: padding-left 0.25s;
+  }
+
+  .why-feature:hover { padding-left: 8px; }
+  .why-feature:last-child { border-bottom: none; }
+
+  .why-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(212,147,58,0.1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.25s;
+  }
+
+  .why-feature:hover .why-icon { background: rgba(212,147,58,0.2); }
+  .why-icon svg { width: 20px; height: 20px; color: var(--sun); }
+
+  .why-feature h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .why-feature p {
+    font-size: 0.84rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* Green highlight card */
+  .eco-card {
+    background: rgba(212,147,58,0.06);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    position: relative;
+  }
+
+  .eco-card::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    color: var(--sun);
+    opacity: 0.15;
+    position: absolute;
+    top: -10px;
+    left: 28px;
+    line-height: 1;
+  }
+
+  .eco-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+
+  .eco-highlight {
+    color: var(--sun);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .eco-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .eco-avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--sun);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+
+  .eco-info strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--cream);
+    font-weight: 500;
+  }
+
+  .eco-info span {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--cream);
+    color: var(--charcoal);
+    padding: 120px 80px;
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-left .section-title { text-align: left; color: var(--charcoal); }
+  .contact-left .section-tag { text-align: left; display: block; }
+  .contact-left .section-sub { text-align: left; margin: 0 0 48px; color: var(--mid); }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid rgba(26,26,26,0.08);
+    text-decoration: none;
+    color: var(--charcoal);
+    transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  }
+
+  .contact-item:hover {
+    border-color: var(--sun);
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(212,147,58,0.1);
+  }
+
+  .contact-item-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--sun-pale);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-item-icon svg { width: 20px; height: 20px; color: var(--sun); }
+
+  .contact-item-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .contact-item-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  /* FORM */
+  .contact-form {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 48px;
+    border: 1px solid rgba(26,26,26,0.08);
+    box-shadow: 0 20px 60px rgba(26,26,26,0.06);
+  }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+
+  .form-sub {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--mid);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid rgba(26,26,26,0.12);
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    background: var(--cream);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--sun);
+    box-shadow: 0 0 0 3px rgba(212,147,58,0.12);
+  }
+
+  .form-group textarea { min-height: 110px; resize: vertical; }
+
+  .form-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--charcoal);
+    color: var(--cream);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .form-submit:hover { background: var(--sun); color: var(--charcoal); transform: translateY(-1px); }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .form-success .checkmark {
+    width: 56px;
+    height: 56px;
+    background: rgba(212,147,58,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #111;
+    padding: 48px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  .footer-brand span {
+    display: block;
+    font-size: 0.68rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  footer p {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .footer-license {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .footer-license span {
+    color: var(--sun);
+    font-weight: 500;
+  }
+
+  /* SCROLL REVEAL */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .hero-left { padding: 60px 24px 40px; }
+    .hero-right { padding: 20px 24px 60px; }
+
+    .services { padding: 80px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+
+    .why { padding: 80px 24px; }
+    .why-inner { grid-template-columns: 1fr; gap: 48px; }
+
+    .contact { padding: 80px 24px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+    .contact-form { padding: 28px; }
+    .form-row { grid-template-columns: 1fr; }
+
+    footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    .footer-license { text-align: center; }
+  }
+
+  /* mobile nav open state */
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px; left: 0; right: 0;
+    background: var(--charcoal);
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+    </div>
+    <div class="nav-brand">
+      Solaris Property Solutions
+      <span>Licensed Builders · Perth WA</span>
+    </div>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:0448610329" class="nav-cta">Call Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-left">
+    <div class="hero-badge">Perth & Western Australia</div>
+    <h1>Property Care<br>Built on <em>Precision</em><br>& Purpose</h1>
+    <p class="hero-sub">Licensed builders specialising in building maintenance, renovations, and property management across Perth and WA — delivering quality that lasts.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        Get a Free Quote
+      </a>
+      <a href="#services" class="btn-secondary">
+        View Our Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card-stack">
+      <div class="hero-card">
+        <div class="stat-grid">
+          <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years Industry Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Core Service Areas</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">HIA</div>
+            <div class="stat-label">Licensed Member</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">WA</div>
+            <div class="stat-label">Wide Coverage</div>
+          </div>
+        </div>
+        <div class="trust-row">
+          <div class="trust-badges">
+            <span class="trust-badge">HIA Member</span>
+            <span class="trust-badge">Master Builders</span>
+            <span class="trust-badge">Eco-Responsible</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header reveal">
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title">Comprehensive Property<br>Services Across WA</h2>
+    <p class="section-sub">From routine maintenance to full-scale renovation, we handle every aspect of your property with care and expertise.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+        </svg>
+      </div>
+      <h3>Building Maintenance</h3>
+      <p>Routine and preventative maintenance programs tailored to strata properties and individual owners. We keep your assets in peak condition year-round.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+        </svg>
+      </div>
+      <h3>Renovations & Fit-Outs</h3>
+      <p>Modern, thoughtfully designed renovations and commercial fit-outs that enhance value and functionality — delivered on time and on budget.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+      <h3>Repairs & Restoration</h3>
+      <p>Interior, exterior, and structural repairs carried out with precision. From minor fixes to full restoration and refurbishment of aging properties.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+        </svg>
+      </div>
+      <h3>Strata Property Services</h3>
+      <p>Specialists in strata-focused maintenance and repairs. We understand the unique requirements of strata managers and body corporates across Perth and WA.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+      </div>
+      <h3>Project Management</h3>
+      <p>End-to-end project management for small to mid-size builds. We coordinate every trade, timeline, and detail so you don't have to.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <h3>Licensed & Insured</h3>
+      <p>Full licensing via HIA and Master Builders Association with professional indemnity and public liability coverage on every project, giving you total peace of mind.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div class="why-left reveal">
+      <span class="section-tag">Why Solaris</span>
+      <h2 class="section-title">Built Different.<br>Built <em style="color:var(--sun);font-style:italic">Better.</em></h2>
+      <p class="section-sub">Every project, big or small, gets the full Solaris treatment — meticulous care, clear communication, and work you can stand behind.</p>
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <h4>Licensed Builders — HIA & Master Builders</h4>
+            <p>Fully licensed and accredited, giving you confidence that every job meets industry standards and regulatory requirements.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>10+ Years Construction Experience</h4>
+            <p>Over a decade of hands-on experience across residential, commercial, and strata property sectors throughout Western Australia.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 01 4 13c0-4.2 2.8-7 7-7a7 7 0 017 7c0 3.87-3.13 7-7 7z"/><path d="M21 20a7 7 0 01-7-7"/><path d="M7 10h4l-2 4h4"/></svg>
+          </div>
+          <div>
+            <h4>Green, Sustainable Methods</h4>
+            <p>An environmentally responsible approach to every project — sustainable materials, minimal waste, and forward-thinking building practices.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          </div>
+          <div>
+            <h4>Fast Turnaround & Reliable Communication</h4>
+            <p>We respect your time. Clear timelines, responsive communication, and a commitment to delivering on schedule — every time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="eco-card reveal">
+      <p class="eco-quote">A <span class="eco-highlight">modern, reliable</span> and environmentally responsible approach to building — tailored precisely to the needs of strata managers and property owners alike.</p>
+      <div class="eco-meta">
+        <div class="eco-avatar">S</div>
+        <div class="eco-info">
+          <strong>Solaris Property Solutions</strong>
+          <span>Perth & Western Australia</span>
+        </div>
+      </div>
+      <div style="margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="background:rgba(212,147,58,0.08);border:1px solid var(--border);border-radius:10px;padding:18px;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--sun);line-height:1;">WA</div>
+          <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;">Full Coverage</div>
+        </div>
+        <div style="background:rgba(212,147,58,0.08);border:1px solid var(--border);border-radius:10px;padding:18px;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--sun);line-height:1;">A+</div>
+          <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;">Quality Standard</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <span class="section-tag">Get In Touch</span>
+      <h2 class="section-title">Ready to Start<br>Your Project?</h2>
+      <p class="section-sub">Reach out today for a free, no-obligation quote. We serve all of Perth and Western Australia.</p>
+      <div class="contact-details">
+        <a href="tel:0448610329" class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">0448 610 329</div>
+          </div>
+        </a>
+        <a href="mailto:j.mcfarlane@solarisconstructions.com.au" class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">j.mcfarlane@solarisconstructions.com.au</div>
+          </div>
+        </a>
+        <a href="https://solarisconstructions.com.au" target="_blank" class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Website</div>
+            <div class="contact-item-value">solarisconstructions.com.au</div>
+          </div>
+        </a>
+        <div class="contact-item" style="cursor:default;">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Coverage Area</div>
+            <div class="contact-item-value">All of Perth & Western Australia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal" id="quoteForm">
+      <div class="form-title">Request a Free Quote</div>
+      <p class="form-sub">Fill in your details and we'll be in touch within 24 hours.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="John" id="fname">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith" id="lname">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="john@example.com" id="email">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="04XX XXX XXX" id="phone">
+      </div>
+      <div class="form-group">
+        <label>Service Required</label>
+        <select id="service">
+          <option value="" disabled selected>Select a service...</option>
+          <option>Building Maintenance</option>
+          <option>Renovations & Fit-Outs</option>
+          <option>Repairs & Restoration</option>
+          <option>Strata Property Services</option>
+          <option>Project Management</option>
+          <option>Other / Multiple Services</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Project Details</label>
+        <textarea placeholder="Tell us about your project, property location, and any specific requirements..." id="message"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Send My Request
+      </button>
+      <div class="form-success" id="formSuccess">
+        <div class="checkmark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4933A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-bottom:8px;color:var(--charcoal)">Thank You!</h4>
+        <p style="font-size:0.85rem;color:var(--mid)">We've received your request and will be in touch within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    Solaris Property Solutions Pty Ltd
+    <span>Licensed Builders · Perth & Western Australia</span>
+  </div>
+  <p>© 2025 Solaris Property Solutions. All rights reserved.</p>
+  <div class="footer-license">
+    <span>HIA Member</span> · Master Builders Association<br>
+    <span style="color:var(--muted);font-size:0.72rem;">ABN available on request</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.getElementById('navLinks');
+    links.classList.toggle('open');
+  }
+
+  // Sticky nav shrink
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('nav');
+    if (window.scrollY > 60) {
+      nav.style.padding = '12px 40px';
+    } else {
+      nav.style.padding = '20px 40px';
+    }
+  });
+
+  // Form submit
+  function submitForm() {
+    const fname = document.getElementById('fname').value;
+    const email = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    if (!fname || !email || !service) {
+      alert('Please fill in your name, email, and service type.');
+      return;
+    }
+    const mailto = `mailto:j.mcfarlane@solarisconstructions.com.au`
+      + `?subject=Quote Request — ${service}`
+      + `&body=Name: ${fname} ${document.getElementById('lname').value}%0D%0A`
+      + `Email: ${email}%0D%0A`
+      + `Phone: ${document.getElementById('phone').value}%0D%0A`
+      + `Service: ${service}%0D%0A%0D%0A`
+      + `Details:%0D%0A${document.getElementById('message').value}`;
+    window.location.href = mailto;
+    document.getElementById('quoteForm').querySelector('.form-submit').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
+</body>
+</html>
